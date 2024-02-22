@@ -221,12 +221,10 @@
     let ForgetPassword = ()=>{
         sendPasswordResetEmail(auth,EmailInp.value)
         .then(()=>{
-            alert("email sent to your email");
+            alert("Check your Email !!");
         })
         .catch((error)=>{
-            console.log(error.code);
-            console.log(error.message);
-
+            alert("Problem in sending Email !!");
         })
     }
     forgetPassword.addEventListener('click',ForgetPassword);
