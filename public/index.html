@@ -208,7 +208,8 @@
         .then((Credential) =>{
             set(ref(db,'UserAuthList/', +  Credential.user.uid),{
                 firstname:fname.value,
-            })            
+            });
+            alert("User created successfully!");            
         })
         .catch((error)=>{
             alert(error.message);
