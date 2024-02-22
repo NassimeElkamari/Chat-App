@@ -191,7 +191,7 @@
 
                     }))
                     sessionStorage.setItem("user-info", JSON.stringify(Credential.user));
-                    window.location.href = 'home.html';
+                    window.location.href = 'chat.html';
                 }
             })
         })
@@ -234,7 +234,7 @@
     .then((result) => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const user = result.user;
-      window.location.href = "home.html"
+      window.location.href = "chat.html"
     }).catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
