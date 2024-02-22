@@ -13,18 +13,22 @@
 <body>
     <div class="navbar">
         <a href=""><img src="../img/Chat_Rooms.png" alt=""></a>
-        
         <div class="nav-links">
           <a href="#">Blog</a>
           <a href="#">About Us</a>
           <a href="#">Sign Up</a>
         </div>
-      </div>
+    </div>
+    
     <div class='code'>
-        <!-- <header class='content'>
+        <video autoplay muted loop id="video-background">
+            <source src="../img/Join chat.mp4" type="video/mp4">
+        </video>
+            
+       <header class='content' id="headerText">
             <h1 class='title'>Stay Updated on Tech Join Our Chat Rooms Now</h1>
             <div class='text'>Connect With Tech Enthusiasts From Around The World And Explore The Latest Advancements In Technology Together.</div>
-        </header> -->
+        </header>
         <!-- <footer class='footer'> -->
             <div  class="relative flex items-center justify-center h-screen mb-12 overflow-hidden ">
                 <!-- <video autoplay loop muted class="absolute  w-auto min-w-full min-h-full max-w-none">
@@ -33,7 +37,7 @@
                 </video> -->
                
                 <div class="z-10">
-                    <button class="bg-white h-10 w-48 z-10"  id="btnJoinOurChat" >join our chat</button>
+                    <button class="bg-white h-10 w-48 z-10 "  id="btnJoinOurChat" >join our chat</button>
                 </div>
                 
               
@@ -92,18 +96,20 @@
                         <div class=" text-white bg-slate-600 h-9 opacity-45 rounded-lg flex items-center justify-center hover:opacity-100">
                             <button type="submit"  id="buttonLogin">Login</button>
                         </div>
+                        <button  ><img id="googleButton" class="w-7 h-7 " src="../img/free-google-1772223-1507807.webp" alt=""></button>
+
                         <div class ="flex items-center  justify-between">
-                        <div class="w-40 my-8 border-t-2">
-                            
+
+                        <div class="w-40 my-8 border-t-2">  
                         </div >
                         <div class="">
                             <span class="text-white">
                                 OU
                             </span>
                         </div>
-                        <div class="w-40 my-8 border-t-2">
-                            
+                        <div class="w-40 my-8 border-t-2">    
                         </div>
+                        
                     </div>
                     <div class="">
                         <p class= "ml-8 text-white">Dont hane any account?</p>
@@ -112,7 +118,6 @@
                             <!-- <p class="text-white">Dont hane any account?</p> -->
 
                             <button  class="signButton" type="button">Sign in</button>
-                            <button  ><img id="googleButton" class="w-5 h-5" src="../img/free-google-1772223-1507807.webp" alt=""></button>
                        </div>
                     </div>
                 </div>
@@ -215,7 +220,7 @@
     let ForgetPassword = ()=>{
         sendPasswordResetEmail(auth,EmailInp.value)
         .then(()=>{
-            alert("emailsen to your email");
+            alert("email sent to your email");
         })
         .catch((error)=>{
             console.log(error.code);
