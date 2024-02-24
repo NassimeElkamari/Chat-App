@@ -11,24 +11,33 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <div class="navbar">
+    <!-- <div class="navbar">
         <a href=""><img src="../img/Chat_Rooms.png" alt=""></a>
         <div class="nav-links">
           <a href="#">Blog</a>
           <a href="#">About Us</a>
           <a href="#">Sign Up</a>
         </div>
-    </div>
+    </div> -->
     
     <div class='code'>
         <video autoplay muted loop id="video-background">
-            <source src="../img/Join chat.mp4" type="video/mp4">
+            <source src="../img/vd.mp4" type="video/mp4">
         </video>
             
        <header class='content' id="headerText">
-            <h1 class='title'>Stay Updated on Tech Join Our Chat Rooms Now</h1>
-            <div class='text'>Connect With Tech Enthusiasts From Around The World And Explore The Latest Advancements In Technology Together.</div>
+            <h1 class='titleText' style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Stay Updated on Tech Join Our Chat Rooms Now </h1>
+            <p class='textTitle'><span id="typewriter"></span></p>
+            
         </header>
+        <button  ></button>
+        <button class="button" id="btnJoinOurChat">
+            <span class="button_lg">
+                <span class="button_sl"></span>
+                <span class="button_text">join our chat</span>
+            </span>
+        </button>
+
         <!-- <footer class='footer'> -->
             <div  class="relative flex items-center justify-center h-screen mb-12 overflow-hidden ">
                 <!-- <video autoplay loop muted class="absolute  w-auto min-w-full min-h-full max-w-none">
@@ -36,9 +45,6 @@
                     Your browser does not support the video tag.
                 </video> -->
                
-                <div class="z-10">
-                    <button class="bg-white h-10 w-48 z-10 "  id="btnJoinOurChat" >join our chat</button>
-                </div>
                 
               
                 <form data-aos="flip-left" data-aos-duration="1000" id="register" class="bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 z-10 bg-transparent hover:shadow-2xl p-9  flex flex-col items-center justify-center hidden" action="">
@@ -70,7 +76,7 @@
                             </div>
 
                             <div class="flex flex-row justify-between p-7 text-white z-20">
-                                <button  class="signButton" type="button">Sign up</button>
+                                <button  class="signButton" type="button">Sign In</button>
                                 <button><img class="w-5 h-5" src="" alt=""></button>
                            </div>
                         </div>
@@ -117,7 +123,7 @@
                         <div class="flex flex-row justify-between p-7 text-white z-20">
                             <!-- <p class="text-white">Dont hane any account?</p> -->
 
-                            <button  class="signButton" type="button">Sign in</button>
+                            <button  class="signButton" type="button">Sign Up</button>
                        </div>
                     </div>
                 </div>

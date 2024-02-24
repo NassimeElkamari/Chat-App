@@ -7,7 +7,7 @@ const signButton = document.querySelectorAll(".signButton");
 const labelEmail = document.getElementById("labelEmail");
 const buttonLogin = document.getElementById("buttonLogin");
 
-function chickEmptyinput() {
+function checkEmptyinput() {
     buttonLogin.style.opacity = "45";
 
     if(labelEmail !== ""){
@@ -36,3 +36,39 @@ btnJoinOurChat.addEventListener("click",() => {
   showRegisterAndLogin();
   headerText.classList.add("hidden")
 });
+
+
+
+
+    const words = ["Connect With Tech Enthusiasts From Around The World And Explore The Latest Advancements In Technology Together."];
+    const el = document.querySelector("#typewriter");
+    const sleepTime = 70; // Adjust this value as needed
+    let currWordIndex = 0;
+
+    const sleep = (time) => {
+        return new Promise((resolve) => setTimeout(resolve, time));
+    };
+
+    const effect = async () => {
+        while (true) {
+            const currWord = words[currWordIndex];
+
+            for (let i = 0; i < currWord.length; i++) {
+                el.innerText = currWord.substring(0, i + 1);
+                await sleep(sleepTime);
+            }
+
+            await sleep(500);
+
+            if (currWordIndex >= words.length - 1) {
+                currWordIndex = 0;
+                await sleep(1000);
+            } else {
+                currWordIndex++;
+            }
+        }
+    };
+
+    effect();
+
+    
