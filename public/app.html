@@ -4,12 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chat App</title>
-    <link rel="stylesheet" type="text/css" href="../css/app.css" />
+    <link rel="stylesheet" type="text/css" href="./css/app.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-      rel="stylesheet"/>
   </head>
   <body>
     <div class="container">
@@ -39,7 +36,7 @@
           <!-- Header -->
           <button class="header">
             <div class="userimg">
-              <img src="../img/mohamed.jpg" class="cover1" />
+              <img src="./img/mohamed.jpg" class="cover1" />
                 </div>
             <ul class="nav-icons">
           <li><ion-icon name="chevron-down-outline"></ion-icon></li>
@@ -56,42 +53,19 @@
         </div>
 
         <!-- Chat list -->
-        <div class="chatlist">
-          <button class="block">    
-              <img src="../img/mouad.jpg" class="cover"/> 
+        <h3 class="online">Online Users</h3>
+
+        <div class="chatlist" id="userList">
           
-              <div class="details">
-                <div class="listHead">
-                  <h4>Muhammad Shayan</h4>
-                  <p class="time">10:56</p>
-                </div>
-                <div class="message_p">
-                  <p>How to make whatsapp clone using html and css</p>
         </div>
-        </div>
-      </button>
-      <button class="block">    
-        <img src="../img/yara.jpg" class="cover"/> 
-    
-        <div class="detailsss">
-          <div class="listHeaddd">
-            <h5>Salma Benani</h5>
-            <p class="Time">Yesterday</p>
-          </div>
-          <div class="message_p12">
-            <p>hope get better soon</p>
-            <b>2</b>
-  </div>
-  </div>
-</button>
-    </div>
   </div>
       <div class="rightSide">
         <button class="header1">
           <div class="userimgx">
-            <img src="/images/khalid.jpg" class="cover1" />
+            <img src="img/yara.jpg" class="cover1" />
               </div>
               <h4><span class="username">Muhammad Shayan</span><br><span class="status">online</span></h4>
+              <p style="font-weight: 800; font-size: larger; text-align: center; "><span id="room-name"></span></p> 
           <ul class="navi-icons">
         <li><ion-icon name="call-outline"></ion-icon></li>
         <li><ion-icon name="videocam-outline"></ion-icon></li>
@@ -100,46 +74,27 @@
         </button>
         <!-- chatbox -->
         <div class="chatbox">
-          <div class="message my_message">
-            <p>Hey Muhammad!<br><span>12:15</span></p>
-          </div>
-          <div class="message his_message">
-            <p>Hey Sara!<br><span>13:00</span></p>
-          </div>
-                <!-- copier -->
-          <div class="message my_message">
-            <p>oiihhojoijljjuhuh<br><span>13:01</span></p>
-          </div>
-          <div class="message his_message">
-            <p>adjhgfusgfs<br><span>13:03</span></p>
-          </div>
-          <div class="message my_message">
-            <p>sldhgashgohdf<br><span>13:09</span></p>
-          </div>
-          <div class="message his_message">
-            <p>uodhgiuweruigerpgi<br><span>13:20</span></p>
-          </div>
-          <div class="message my_message">
-            <p>sduigfsudgudsdljkhldfjh<br><span>13:23</span></p>
-          </div>
-          <div class="message his_message">
-            <p>dsgsfidgdglgduhoi<br><span>13:30</span></p>
-          </div>
-          <div class="message my_message">
-            <p>wehgweruweldfjlkqwjskl<br><span>13:34</span></p>
-          </div>
-          <div class="message his_message">
-            <p>wiefweiuuwpoipo!<br><span>13:36</span></p>
-          </div>
+        
+         
         </div>
-        <div class="chatbox_input">
-  <ion-icon name="happy-outline"></ion-icon>
-  <ion-icon name="attach-outline"></ion-icon>
-  <input type="text" placeholder="Type your reply here...">
-  <ion-icon name="mic-outline"></ion-icon>
-  </div>
+        <div class="chat-form-container">
+          <form id="chat-form">
+            <input
+              id="msg"
+              type="text"
+              placeholder="Type your Message"
+              required
+              autocomplete="off"
+            />
+            <button class="btn"><img src="img/send.png" style="width: 45%;"> </button>
+          </form>
+        </div>
+        
     </div>
       </div>
+      <div class="wave"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
     
 
     <script
@@ -150,5 +105,9 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.11.2/qs.min.js" 
+    integrity="sha512-vCegEXqPUYpZsTGz2lk0jaQ1psxtFeniVJACAXhMVxuoYa/N4nZkjoVFOxLwP7uGeQOoemiz7DQrIpRTj4IBPw==" crossorigin="anonymous" ></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
