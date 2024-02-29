@@ -16,18 +16,7 @@
             <li><ion-icon name="logo-wechat"></ion-icon></li>
             <p>ChatterEaser</p>
               </ul>
-              <div class="iioonn">
-                <ul class="ionn">
-                  <li><ion-icon name="grid-outline"></ion-icon></li>
-                  <li><ion-icon name="filter-circle-outline"></ion-icon></li>
-                  <li><ion-icon name="clipboard-outline"></ion-icon></li>
-                  <li><ion-icon name="calendar-outline"></ion-icon></li>
-                  <li><ion-icon name="people-outline"></ion-icon></li>
-                  <li></li>
-                </ul>
-              </div>
-
-
+              <div id="profileInfo"></div>
         </div>
       </div>
       <div class="leftSide">
@@ -35,9 +24,15 @@
         <div class="both">
           <!-- Header -->
           <button class="header">
-            <div class="userimg">
-              <img src="./img/mohamed.jpg" class="cover1" />
-                </div>
+            
+            <div id="profileInfoPopup" class="popup">
+              <div class="popup-content" id="profileInfoContent"></div>
+          </div>
+      
+          <!-- User image -->
+          <div class="userimg" id="userImgDiv">
+              <img src="./img/mohamed.jpg" class="cover1" id="userImg" />
+          </div>
             <ul class="nav-icons">
           <li><ion-icon name="chevron-down-outline"></ion-icon></li>
             </ul>
@@ -64,7 +59,7 @@
           <div class="userimgx">
             <img src="img/yara.jpg" class="cover1" />
               </div>
-              <h4><span class="username">Muhammad Shayan</span><br><span class="status">online</span></h4>
+              <h4><span class="usernamee" style="color: white;"></span><br><span class="status">online</span></h4>
               <p style="font-weight: 800; font-size: larger; text-align: center; "><span id="room-name"></span></p> 
           <ul class="navi-icons">
         <li><ion-icon name="call-outline"></ion-icon></li>
@@ -92,10 +87,33 @@
         
     </div>
       </div>
-      <div class="wave"></div>
-        <div class="wave wave2"></div>
-        <div class="wave wave3"></div>
-    
+      
+       
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    const userImg = document.getElementById('userImg');
+    userImg.addEventListener('click', showProfilePopup);
+
+    function showProfilePopup() {
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        if (userData) {
+            const profileInfoHTML = `
+                <p><strong>Name:</strong> ${userData.displayName}</p>
+                <p><strong>Email:</strong> ${userData.email}</p>
+                <!-- Add more profile information as needed -->
+            `;
+            const profileInfoContent = document.getElementById('profileInfoContent');
+            profileInfoContent.innerHTML = profileInfoHTML;
+
+            const profileInfoPopup = document.getElementById('profileInfoPopup');
+            profileInfoPopup.style.display = 'block';
+        } else {
+            console.error("User data not found");
+        }
+    }
+});
+
+  </script>
 
     <script
       type="module"
