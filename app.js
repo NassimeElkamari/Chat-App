@@ -24,7 +24,7 @@ io.on('connection' , (socket) =>{
         socket.join(user.room);
 
         // Welcome current user
-        socket.emit('message' , formatMessage(botName , 'Welcome to ChatCord!'));
+        socket.emit('message' , formatMessage(botName , 'Welcome to Chat!'));
 
         // Broadcaast when a user connects
         socket.broadcast
@@ -53,15 +53,11 @@ io.on('connection' , (socket) =>{
         }
     })
 
-    // Listen for chatMessage
-socket.on('chatMessage', (msg) => {
-    const user = getCurrentUser(socket.id);
-    io.to(user.room).emit('message', formatMessage(user.username, msg));
-});
-
-
-
-
+            // Listen for chatMessage
+        socket.on('chatMessage', (msg) => {
+            const user = getCurrentUser(socket.id);
+            io.to(user.room).emit('message', formatMessage(user.username, msg));
+        });
 })
 
 io.on('error', error => {

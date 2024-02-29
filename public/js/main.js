@@ -1,14 +1,18 @@
 const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chatbox');
 const roomName = document.getElementById('room-name')
-const userList = document.getElementById('userList')
+const userList = document.getElementById('userList');
+const usernamee = document.querySelector('.usernamee');
+
+const userData = JSON.parse(localStorage.getItem('userData'));
+
 
 // Get username and room from URL 
 const { username , room} = Qs.parse(location.search , {
     ignoreQueryPrefix: true 
 });
 
-console.log(username , room);
+console.log(userData);
 
 const socket = io();
 
@@ -57,9 +61,10 @@ function outputMessage(message) {
         div.classList.add('his_message'); // Class for other users' messages
     }
 
-    div.innerHTML = `<p class="meta"><span style="display: flex ; justify-content: start ; font-size: smaller ; text-decoration: underline">${message.username} à ${message.time}</span></br>${message.text}</p>
+    div.innerHTML = `<p class="meta"><span style="display: flex ; justify-content: start ; font-size: smaller ; text-decoration: underline">${userData.displayName} à ${message.time}</span></br>${message.text}</p>
     ` ;
     document.querySelector('.chatbox').appendChild(div);
+    usernamee.innerText = `${userData.displayName}`
 }
 
 
@@ -77,7 +82,7 @@ function outputUsers(users) {
       <img src="./img/user.png" class="cover"/> 
       <div class="details">
         <div class="listHead">
-          <h4>🟢 ${user.username} </h4>
+          <h4>🟢 ${userData.displayName} </h4>
           <p class="time">10:56</p>
         </div>           
       </div>

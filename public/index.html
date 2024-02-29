@@ -123,9 +123,7 @@
             <!-- <a class='ripple'>Get Started now</a> -->
         <!-- </footer> -->
     
-        <div class='wave'></div>
-        <div class='wave wave2'></div>
-        <div class='wave wave3'></div>
+        
     </div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -224,11 +222,17 @@
     }
     forgetPassword.addEventListener('click',ForgetPassword);
 
+
     googleButton.addEventListener("click" , function(){
     signInWithPopup(auth, provider)
     .then((result) => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const user = result.user;
+      const userData = {
+      displayName: user.displayName,
+      email: user.email,
+    };
+    localStorage.setItem('userData', JSON.stringify(userData));
       window.location.href = "chat.html"
     }).catch((error) => {
       const errorCode = error.code;
