@@ -12,8 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url("https://images.pexels.com/photos/1145720/pexels-photo-1145720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
-    no-repeat;
+  background: url(../img/cover.png);
 
   background-position: center;
   background-size: cover;
