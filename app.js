@@ -15,8 +15,18 @@ app.use(express.static(path.join(__dirname , 'public')));
 
 const botName = 'ChatBot' ;
 
+
+// Set up the list of available rooms
+const availableRooms = ["Room 1", "Room 2", "Room 3"];
+
+// Serve the list of available rooms when requested
+app.get('/rooms', (req, res) => {
+    res.json({ rooms: availableRooms });
+});
 // run when client connects
 io.on('connection' , (socket) =>{
+    socket.emit('roomList', { rooms: availableRooms });
+    
 
     socket.on('joinRoom' , ({username , room}) =>{
         const user = userJoin(socket.id , username , room);

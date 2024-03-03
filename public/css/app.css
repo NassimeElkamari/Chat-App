@@ -34,7 +34,6 @@ body{
 .container .ANOTHERside
 {
   position: relative;
-  width: 13%;
   background: linear-gradient(#0e76c5,#DDE6ED,#013c69);
   overflow: hidden;
   z-index: 10;
@@ -48,7 +47,6 @@ body{
 .container .leftSide
 {
   position: relative;
-  width: 28%;
   background: linear-gradient(#013c69,#DDE6ED,#0e76c5);
   overflow: hidden;
 }
@@ -56,7 +54,7 @@ body{
 .container .rightSide
 {
 
-  flex: 50%;
+  flex: 30%;
   background:#F3F8FF ;
   border-right:#d9dbd5;
   z-index: 10;
@@ -86,6 +84,24 @@ body{
   border-color: transparent;
   cursor: pointer;
   
+}
+
+.iioonn {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.iioonn li {
+
+    list-style-type: none;
+    margin-top: 0.4rem;
+    padding: 4%;
+    color: #18181b;
+    font-size: 1em;
+
+
 }
 .userimg
 {

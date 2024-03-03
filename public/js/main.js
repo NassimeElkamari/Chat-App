@@ -82,7 +82,7 @@ function outputUsers(users) {
       <img src="./img/user.png" class="cover"/> 
       <div class="details">
         <div class="listHead">
-          <h4>🟢 ${userData.displayName} </h4>
+          <h4>🟢 ${user.username} </h4>
           <p class="time">10:56</p>
         </div>           
       </div>
@@ -100,4 +100,3 @@ document.getElementById('leave-btn').addEventListener('click', () => {
     } else {
     }
   });
-
