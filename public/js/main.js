@@ -4,13 +4,19 @@ const roomName = document.getElementById('room-name')
 const userList = document.getElementById('userList');
 const usernamee = document.querySelector('.usernamee');
 
-const userData = JSON.parse(localStorage.getItem('userData'));
-
-
 // Get username and room from URL 
 const { username , room} = Qs.parse(location.search , {
     ignoreQueryPrefix: true 
 });
+
+// Generate a unique identifier using the current timestamp
+const sessionId = Date.now();
+
+// Use the username and sessionId to construct the localStorage key
+const localStorageKey = `userData_${username}_${sessionId}`;
+
+// Retrieve userData from localStorage
+const userData = JSON.parse(localStorage.getItem(localStorageKey));
 
 console.log(userData);
 
@@ -61,12 +67,11 @@ function outputMessage(message) {
         div.classList.add('his_message'); // Class for other users' messages
     }
 
-    div.innerHTML = `<p class="meta"><span style="display: flex ; justify-content: start ; font-size: smaller ; text-decoration: underline">${userData.displayName} à ${message.time}</span></br>${message.text}</p>
+    div.innerHTML = `<p class="meta"><span style="display: flex ; justify-content: start ; font-size: smaller ; text-decoration: underline">${message.username} à ${message.time}</span></br>${message.text}</p>
     ` ;
     document.querySelector('.chatbox').appendChild(div);
     usernamee.innerText = `${userData.displayName}`
 }
-
 
 // Add room name to DOM 
 function outputRoomName(room){
@@ -91,12 +96,14 @@ function outputUsers(users) {
     });
 }
 
+// Store userData in localStorage
+localStorage.setItem(localStorageKey, JSON.stringify(userData));
 
-//Prompt the user before leave chat room
+// //Prompt the user before leave chat room
 document.getElementById('leave-btn').addEventListener('click', () => {
     const leaveRoom = confirm('Are you sure you want to leave the chatroom?');
     if (leaveRoom) {
-      window.location = '../index.html';
+      window.location = '../chat.html';
     } else {
     }
-  });
+});

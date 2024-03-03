@@ -15,16 +15,45 @@ body{
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background:#27374D ;
 }
 
+.leave-button {
+  width: 50%;
+  margin-left: 20%;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #363062; /* Red color */
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  
+}
+
+.leave-button:hover {
+  background-color: #d32f2f; /* Darker red color on hover */
+}
+
+
+video#video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1; /* Ensure the video is behind other content */
+}
 .container
 {
   position: relative;
   width: 1396px;
   max-width: 97%;
   height: calc(100vh - 100px);
-  background: #27374D;
   box-shadow: 0 1px 1px rgba(0,0,0,0.06),0 2px 5px 0 rgba(0,0,0,0.06);
   display: flex;
   justify-content: space-between;
@@ -34,28 +63,21 @@ body{
 .container .ANOTHERside
 {
   position: relative;
-  background: linear-gradient(#0e76c5,#DDE6ED,#013c69);
+  background: linear-gradient(#E9D5DA,#DDE6ED,#827397);
   overflow: hidden;
-  z-index: 10;
 
 }
 .both{
   position: relative;
   display: flex;
-  z-index:999;
 }
-.container .leftSide
-{
-  position: relative;
-  background: linear-gradient(#013c69,#DDE6ED,#0e76c5);
-  overflow: hidden;
-}
+
 
 .container .rightSide
 {
 
   flex: 30%;
-  background:#F3F8FF ;
+  background:url(../img/conv.jpeg) ;
   border-right:#d9dbd5;
   z-index: 10;
 
@@ -192,10 +214,12 @@ border-radius:50%;
 
 .chatlist
 {
-  height: calc(100% - 85px); 
   overflow-y: auto;
-  z-index: 10;
+  height: 800px; /* Adjust the maximum height as needed */
+}
 
+.hidden{
+  display: none;
 }
 
 .chatlist .block
@@ -323,7 +347,7 @@ border-radius:50%;
   width: 96%;
   margin: 15px;
   height: 55px;
-  background:linear-gradient(#27374D,#526D82);
+  background:linear-gradient(#4D4C7D,#526D82);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -467,7 +491,7 @@ margin-right: 5px;
 {
   cursor: pointer;
   font-size: 2em;
-  color: #51585c;
+  color: #827397;
   margin-left: 10px;
 }
 .chatbox_input ion-icon:nth-child(1)
@@ -483,7 +507,7 @@ margin-right: 5px;
   outline: none;
   border-radius: 30px;
   font-size: 1em;
-  background: #d9dbd5;
+  background: #c5c7c1;
   bottom: 15px;
 }
 
