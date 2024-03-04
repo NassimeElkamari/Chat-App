@@ -32,10 +32,10 @@ signButton.forEach((btn) => {
       });
 })
 
-btnJoinOurChat.addEventListener("click",() => {
-  showRegisterAndLogin();
-  headerText.classList.add("hidden")
-});
+// btnJoinOurChat.addEventListener("click",() => {
+//   showRegisterAndLogin();
+//   headerText.classList.add("hidden")
+// });
 
 
 

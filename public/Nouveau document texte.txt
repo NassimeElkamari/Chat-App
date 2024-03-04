@@ -496,3 +496,114 @@ sign_up_btn2.addEventListener("click", () => {
 sign_in_btn2.addEventListener("click", () => {
     container.classList.remove("sign-up-mode2");
 });
+
+
+
+
+
+
+
+
+
+<div class="container">
+        <div class="signin-signup">
+            <form  class="sign-in-form" id="login">
+                <h2 class="title">Sign in</h2>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" id="email">
+                </div>
+               
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" id="password">
+                </div>
+                <button type="submit" value="Login" class="btn" id="buttonLogin">Login</button>
+                <p class="social-text">Or Sign In with google</p>
+                <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2" >Sign up</a></p>
+            </form>
+            <form  class="sign-up-form">
+                <h2 class="title">Sign up</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="enter Your full name" id="fullname">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" placeholder="Email" id="registerEmail">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" id="registerPassword">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="confirm-Password" id="RegisterCpassword">
+                </div>
+                <button type="submit" value="Register" class="btn" ></button>
+                <p class="social-text">Or Sign Up with google</p>
+                <div class="social-media" >
+                    
+                    <a href="" class="social-icon">
+                        <i class="fab fa-google" ></i>
+                    </a>
+                    
+                </div>
+                <p class="account-text">Already have an account? <a href="#" id="sign-in-btn2">Sign in</a></p>
+            </form>
+        </div>
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>You have a ready  acount ?</h3>
+                    <p>click down to log your acount</p>
+                    <button class="btn" id="sign-in-btn"><span class="span-mother">
+                        <span>S</span>
+                        <span>i</span>
+                        <span>g</span>
+                        <span>n</span>
+                        <span>-</span>
+                        <span>i</span>
+                        <span>n</span>
+                      </span>
+                      <span class="span-mother2">
+                        <span>S</span>
+                        <span>i</span>
+                        <span>g</span>
+                        <span>n</span>
+                        <span>-</span>
+                        <span>i</span>
+                        <span>n</span>
+                      </span></button>
+                </div>
+                <img src="img/signin.svg" alt="" class="image">
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3> You don't have an account?</h3>
+                    <p>come join our community click down to register</p>
+                    <button class="btn" id="sign-up-btn"><span class="span-mother">
+                        <span>S</span>
+                        <span>i</span>
+                        <span>g</span>
+                        <span>n</span>
+                        <span>-</span>
+                        <span>u</span>
+                        <span>p</span>
+                      </span>
+                      <span class="span-mother2">
+                        <span>S</span>
+                        <span>i</span>
+                        <span>g</span>
+                        <span>n</span>
+                        <span>-</span>
+                        <span>u</span>
+                        <span>p</span>
+                      </span></button>
+                </div>
+                <img src="img/welcome.svg" alt="" class="image">
+                <button id="googleButton"><img src="img/free-google-1772223-1507807.webp"></button>
+
+            </div>
+        </div>
+    </div>

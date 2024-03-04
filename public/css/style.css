@@ -6,16 +6,10 @@
     padding: 0;
 }
   
-.anta-regular {
-    font-family: "Anta", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
+
 
 html,
 body {
-    font-size: 12px;
-    font-family: "Anta", sans-serif;
     overflow: hidden;
     text-align: center;
     line-height: 1.4;
@@ -131,8 +125,8 @@ body {
     bottom: -1px;
     left: -8px;
     width: 0;
-    background-image: linear-gradient(to bottom right, #1e54e7,
-  #050642);
+    background-image: linear-gradient(to bottom right, #E9D5DA,
+  #363062);
     transform: skew(-15deg);
     transition: all .2s ease;
   }
@@ -172,20 +166,19 @@ body {
 }
 
 .textTitle{
-  font-size: 20px;
+  font-size: 26px;
   margin-top: 2%;
   color: #363062;
-  font-weight: 900;
-  background-color: white;
 }
 
-.titleText{
+
+.titleText {
+  font-size: 3.4rem;
+  font-weight: 700;
   color: #363062;
-  font-weight: 900;
+  animation: bounce-in-top 1.8s both;
 }
-
 .content {
-    font-weight: 400;
     margin-top: 10%;
 }
 
@@ -250,12 +243,6 @@ body {
     backface-visibility: hidden;
 }
 
-.titleText {
-    font-size: 6.4rem;
-    font-weight: 400;
-    animation: bounce-in-top 1.8s both;
-
-}
 
  @keyframes bounce-in-top {
     0% {
@@ -378,3 +365,54 @@ body {
 #login , #register{
   z-index: 11;
 }
+
+
+
+.bigDiv{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.divs{
+  width: 20%;
+  margin-top: 5%;
+  color: white;
+  height: 70%;
+  border-radius: 20px;
+  margin-bottom: 105px;
+}
+
+.divs:nth-child(1){
+  background-color: #4D4C7D;
+}
+.divs:nth-child(2){
+  background-color: #827397;
+}
+.divs:nth-child(3){
+  background-color: #4D4C7D;
+}
+
+.fa-solid {
+  font-size: 2em;
+  margin-top: 20px; /* Adjust the value as needed to make it bigger */
+}
+
+
+
+.text-white{
+  margin-top: 15px;
+  font-size: large;
+}
+
+.divs p{
+  margin-top: 10px ;
+  font-size: large;
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+
+
+
