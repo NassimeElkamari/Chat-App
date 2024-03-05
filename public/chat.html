@@ -1,56 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
-      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./css/main.css" />
-    <title>ChatCord App</title>
-  </head>
-
-  <body>
-    <div class="wrapper">
-      <div class="join-container">
-        <header class="join-header">
-          <h1><i class="fas fa-smile"></i> Chattos</h1>
-        </header>
-
-        <main class="join-main">
-          <form action="app.html">
-            <div class="form-control">
-              <label for="username">Username</label>
-              <input
-                class="input-box"
-                type="text"
-                name="username"
-                id="username"
-                placeholder="Enter username..."
-                required
-              />
-            </div>
-            <div class="form-control">
-              <label for="room">Room</label>
-              <select name="room" id="room">
-                <option value="Hardware Discussions">Hardware Discussions</option>
-                <option value="Software Development">Software Development</option>
-                <option value="Tech News Updates">Tech News Updates</option>
-                <option value="Cybersecurity">Cybersecurity</option>
-                <option value="AI and Machine Learning">AI and Machine Learning</option>
-                <option value="Tech Career Advice">Tech Career Advice</option>
-              </select>
-            </div>
-            <button type="submit" class="btn-join">Join Chat</button>
-          </form>
-        </main>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ChatCord App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+  <video autoplay muted preload loop id="video-background">
+    <source src="./img/vd3.mp4" type="video/mp4">
+  </video>
+  <div class="wrapper">
+    <div class="join-container">
+     
+      <main class="join-main">
+        <form action="app.html">
+          <div class="form-control">
+            <label for="username">Username</label>
+            <input class="input-box" type="text" name="username" id="username" placeholder="Enter username..." required />
+          </div>
+          <div class="form-control">
+            <label for="room">Room</label>
+            <select name="room" id="room">
+              <option value="Hardware Discussions">Hardware Discussions</option>
+              <option value="Software Development">Software Development</option>
+              <option value="Tech News Updates">Tech News Updates</option>
+              <option value="Cybersecurity">Cybersecurity</option>
+              <option value="AI and Machine Learning">AI and Machine Learning</option>
+              <option value="Tech Career Advice">Tech Career Advice</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-join">Join Chat</button>
+        </form>
+      </main>
     </div>
-  </body>
+  </div>
+</body>
 </html>
-
-

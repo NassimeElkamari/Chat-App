@@ -12,12 +12,23 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url("https://images.pexels.com/photos/1145720/pexels-photo-1145720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
-    no-repeat;
+  background: url(../img/cover.png);
 
   background-position: center;
   background-size: cover;
 }
+
+video#video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1; /* Ensure the video is behind other content */
+}
+
 
 .wrapper {
   width: 420px;

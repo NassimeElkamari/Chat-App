@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/style2.css">
+    <title>signin-signup</title>
+</head>
+<body>
+    <div class="container">
+        <div class="signin-signup">
+            <form action="" class="sign-in-form" id="login">
+                <h2 class="title">Sign in</h2>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" id="email">
+                </div>
+               
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" id="password">
+                </div>
+                <button type="submit" value="Login" class="btn" id="buttonLogin">login</button>
+                <p class="social-text">Or Sign In with google</p>
+                <div class="social-media" id="googleButton">
+                    
+                    <a class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    
+                </div>
+                <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a></p>
+            </form>
+
+            <form action="" class="sign-up-form" id="register">
+                <h2 class="title">Sign up</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="enter Your full name" id="fullname">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" id="registerEmail">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" id="registerPassword">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="confirm-Password">
+                </div>
+                <button type="submit" value="Register" id="register" class="btn">Register</button>
+                <p class="social-text">Or Sign Up with google</p>
+                <div class="social-media" id="googleButtonn">
+                    
+                    <a class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    
+                </div>
+                <p class="account-text">Already have an account? <a href="#" id="sign-in-btn2">Sign in</a></p>
+            </form>
+            
+        </div>
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>You have Already an account ?</h3>
+                    <p>click down to log your account</p>
+                    <button class="btn" id="sign-in-btn"><span class="span-mother">
+                        <span>S</span>
+                        <span>i</span>
+                        <span>g</span>
+                        <span>n</span>
+                        <span>-</span>
+                        <span>i</span>
+                        <span>n</span>
+                      </span>
+                      <span class="span-mother2">
+                        <span>S</span>
+                        <span>i</span>
+                        <span>g</span>
+                        <span>n</span>
+                        <span>-</span>
+                        <span>i</span>
+                        <span>n</span>
+                      </span></button>
+                </div>
+                <img src="img/signin.svg" alt="" class="image">
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3> You don't have an account?</h3>
+                    <p>come join our community click down to register</p>
+                    <button class="btn" id="sign-up-btn"><span class="span-mother">
+                        <span>S</span>
+                        <span>i</span>
+                        <span>g</span>
+                        <span>n</span>
+                        <span>-</span>
+                        <span>u</span>
+                        <span>p</span>
+                      </span>
+                      <span class="span-mother2">
+                        <span>S</span>
+                        <span>i</span>
+                        <span>g</span>
+                        <span>n</span>
+                        <span>-</span>
+                        <span>u</span>
+                        <span>p</span>
+                      </span></button>
+                </div>
+                <img src="img/welcome.svg" alt="" class="image">
+            </div>
+        </div>
+    </div>
+    <video autoplay muted preload loop id="video-background">
+        <source src="./img/vd3.mp4" type="video/mp4">
+      </video>
+
+    <script>
+        const sign_in_btn = document.querySelector("#sign-in-btn");
+        const sign_up_btn = document.querySelector("#sign-up-btn");
+        const container = document.querySelector(".container");
+        const sign_in_btn2 = document.querySelector("#sign-in-btn2");
+        const sign_up_btn2 = document.querySelector("#sign-up-btn2");
+        sign_up_btn.addEventListener("click", () => {
+            container.classList.add("sign-up-mode");
+        });
+        sign_in_btn.addEventListener("click", () => {
+            container.classList.remove("sign-up-mode");
+        });
+        sign_up_btn2.addEventListener("click", () => {
+            container.classList.add("sign-up-mode2");
+        });
+        sign_in_btn2.addEventListener("click", () => {
+            container.classList.remove("sign-up-mode2");
+        });
+    </script>
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+     <script>
+         AOS.init();
+       </script>
+ <script src="./js/index.js"></script>
+ 
+   <script type="module">
+     // Import the functions you need from the SDKs you need
+     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+     import { getDatabase ,set, get ,ref, child } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+     import { getAuth , signInWithEmailAndPassword ,createUserWithEmailAndPassword,sendPasswordResetEmail, GoogleAuthProvider , signInWithPopup} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+ 
+     // TODO: Add SDKs for Firebase products that you want to use
+     // https://firebase.google.com/docs/web/setup#available-libraries
+   
+     // Your web app's Firebase configuration
+     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+         const firebaseConfig = {
+         apiKey: "AIzaSyA5p42Lww_eEJooeU1G_D3go5AjbLOui1Y",
+         authDomain: "project2-cfc02.firebaseapp.com",
+         projectId: "project2-cfc02",
+         storageBucket: "project2-cfc02.appspot.com",
+         messagingSenderId: "800498930483",
+         appId: "1:800498930483:web:eb02d10b403ad428826446"
+         };
+ 
+   
+     // Initialize Firebase
+     const app = initializeApp(firebaseConfig);
+     const db = getDatabase();
+     const auth = getAuth(app);
+     const dbref = ref(db);
+     const provider = new GoogleAuthProvider();
+ 
+     let EmailInp = document.getElementById("email");
+     let PassInp = document.getElementById("password");
+     let RegisterEmailInp = document.getElementById("registerEmail");
+     let RegisterPassInp = document.getElementById("registerPassword");
+     let fname = document.getElementById("fullname");
+     let googleButton = document.getElementById("googleButton");
+     let googleButtonn = document.getElementById("googleButtonn");
+ 
+     let login = document.getElementById("login");
+     let register = document.getElementById("register");
+ 
+ 
+     let signInUser = e => {
+         e.preventDefault();
+         signInWithEmailAndPassword(auth,EmailInp.value ,PassInp.value)
+         .then((Credential) =>{
+             get(child(dbref,'UserAuthList/', +  Credential.user.uid))
+             .then((snapchot) =>{
+                 if(snapchot.exists){
+                     sessionStorage.setItem("user-info",JSON.stringify({
+                         firstname:snapchot.val().fname,
+ 
+                     }))
+                     sessionStorage.setItem("user-info", JSON.stringify(Credential.user));
+                     window.location.href = 'chat.html';
+                 }
+             })
+         })
+         .catch((error)=>{
+             alert(error.message);
+         })
+ 
+     }
+     login.addEventListener('submit', signInUser);
+ 
+     let registerUser = e => {
+         e.preventDefault();
+         createUserWithEmailAndPassword(auth,RegisterEmailInp.value ,RegisterPassInp.value)
+         .then((Credential) =>{
+             set(ref(db,'UserAuthList/', +  Credential.user.uid),{
+                 firstname:fname.value,
+             });
+             alert("User created successfully!");            
+         })
+         .catch((error)=>{
+             alert(error.message);
+         })
+ 
+     }
+     register.addEventListener('submit', registerUser);
+ 
+    //  let ForgetPassword = ()=>{
+    //      sendPasswordResetEmail(auth,EmailInp.value)
+    //      .then(()=>{
+    //          alert("Check your Email !!");
+    //      })
+    //      .catch((error)=>{
+    //          alert("Problem in sending Email !!");
+    //      })
+    //  }
+    //  forgetPassword.addEventListener('click',ForgetPassword);
+ 
+ 
+     googleButton.addEventListener("click" , function(){
+     signInWithPopup(auth, provider)
+     .then((result) => {
+       const credential = GoogleAuthProvider.credentialFromResult(result);
+       const user = result.user;
+       const userData = {
+       displayName: user.displayName,
+       email: user.email,
+     };
+     localStorage.setItem('userData', JSON.stringify(userData));
+       window.location.href = "chat.html"
+     }).catch((error) => {
+       const errorCode = error.code;
+       const errorMessage = error.message;
+     });
+ 
+   });
+     googleButtonn.addEventListener("click" , function(){
+     signInWithPopup(auth, provider)
+     .then((result) => {
+       const credential = GoogleAuthProvider.credentialFromResult(result);
+       const user = result.user;
+       const userData = {
+       displayName: user.displayName,
+       email: user.email,
+     };
+     localStorage.setItem('userData', JSON.stringify(userData));
+       window.location.href = "chat.html"
+     }).catch((error) => {
+       const errorCode = error.code;
+       const errorMessage = error.message;
+     });
+ 
+   });
+ 
+ 
+   const video = document.querySelector('video');
+ 
+     video.addEventListener('ended', function() {
+     this.currentTime = 0;
+     this.play();
+     });
+ 
+ 
+   </script>
+</body>
+</html>

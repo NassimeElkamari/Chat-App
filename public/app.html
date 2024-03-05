@@ -9,71 +9,87 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body>
+     <div class="leftside" style="margin-top: -40%;">
+      <ul class="nav-icons">
+        <li id="toggleIcon" ><ion-icon name="menu-outline" style="width: 50px; height: 50px;"></ion-icon></li>
+      </ul>
+
+      <!-- <div class="room-list">
+        <p>Room list</p>
+        <ul id="rooms">
+             Rooms will be dynamically populated here 
+        </ul>
+    </div> -->
+    
+     </div>
     <div class="container">
-      <div class="ANOTHERside">
-        <div class="header0">
-          <ul class="IoN-icons">
-            <li><ion-icon name="logo-wechat"></ion-icon></li>
-            <p>ChatterEaser</p>
-              </ul>
-              <div id="profileInfo"></div>
-        </div>
-      </div>
       <div class="leftSide">
         
-        <div class="both">
-          <!-- Header -->
-          <button class="header">
-            
-            <div id="profileInfoPopup" class="popup">
-              <div class="popup-content" id="profileInfoContent"></div>
-          </div>
-      
-          <!-- User image -->
-          <div class="userimg" id="userImgDiv">
-              <img src="./img/mohamed.jpg" class="cover1" id="userImg" />
-          </div>
-            <ul class="nav-icons">
-          <li><ion-icon name="chevron-down-outline"></ion-icon></li>
-            </ul>
-          </button>
-          <!-- Search -->
-          <button class="search-chat">
-            <ul class="search-icons">
-              <li><ion-icon name="search-outline"></ion-icon></li>
-              
-            </ul>
-            Search
-          </button>
-        </div>
-
-        <!-- Chat list -->
-        <h3 class="online">Online Users</h3>
-
-        <div class="chatlist" id="userList">
+      </div>
+      <div class="ANOTHERside" style="width: 25%;">
+        
+        <div class="header0">
           
-        </div>
-  </div>
-      <div class="rightSide">
-        <button class="header1">
-          <div class="userimgx">
-            <img src="img/yara.jpg" class="cover1" />
+          <br>
+          <div class="CHATLIST">
+            <div class="Block">
+              <div class="block">    
+                <img src="./img/user.png" style="width: 25px; height: 25px; margin-left: 45%;" /> 
+                <br>
+                <div class="details" style="text-align: center;">
+                  <div class="listHead">
+                    <h5><span id="userName"></span></h4>
+                    <p ><span id="userEmail"></span></p>
+                  </div>           
+                </div>
               </div>
-              <h4><span class="usernamee" style="color: white;"></span><br><span class="status">online</span></h4>
-              <p style="font-weight: 800; font-size: larger; text-align: center; "><span id="room-name"></span></p> 
-          <ul class="navi-icons">
-        <li><ion-icon name="call-outline"></ion-icon></li>
-        <li><ion-icon name="videocam-outline"></ion-icon></li>
-        <li><ion-icon name="menu-outline"></ion-icon></li>
-          </ul>
-        </button>
+            </div>
+          </div>
+          
+          
+          <div class="iioonn hidden">
+            <ul class="ionn">
+              <li><ion-icon name="mail-unread-outline"></ion-icon><span class="span-chat-icons">Toji</span></li>
+              <li><ion-icon name="people-outline"></ion-icon><span class="span-chat-icons">Members</span></li>
+              <li><ion-icon name="today-outline"></ion-icon><span class="span-chat-icons">Schedule</span></li>
+              <li><ion-icon name="documents-outline"></ion-icon><span class="span-chat-icons">Drafts</span></li>
+              <li><ion-icon name="settings-outline"></ion-icon><span class="span-chat-icons">Settings</span></li>
+              <li><ion-icon name="trash-outline"></ion-icon><span class="span-chat-icons">Trash</span></li>
+            </ul>
+          </div>
+        </div>
+        <br>
+        <h3 class="online">Online Users</h3>
+        <div class="chatlist" id="userList">
+          <!-- Your list of online users goes here -->
+        </div>
+        
+      </div>
+      
+      
+      <div class="rightSide" style="width: 70%;">
+        <div class="header1">
+          <div class="userimgx">
+            <img src="img/user.png" class="cover1" />
+              </div>
+              <h5><span id="usernameOnline" style="color: white; margin-left: -45%; "></span><br><span class="status" style=" margin-left: -45%;">online</span></h5>
+              <div class="flexb" style="display: flex; justify-content: space-between; align-items: center;">
+                  <p style="font-weight: 300; font-size: larger; width: 3px; "><span id="room-name"></span></p>
+                  <ul class="navi-icons">
+                    <li><ion-icon name="call-outline"></ion-icon></li>
+                    <li><ion-icon name="videocam-outline"></ion-icon></li>
+                    <li><ion-icon name="menu-outline"></ion-icon></li>
+                  </ul>
+              </div> 
+        </div>
         <!-- chatbox -->
         <div class="chatbox">
-        
-         
+          
         </div>
-        <div class="chat-form-container">
+        <div class="chatbox_input" >
           <form id="chat-form">
+            <ion-icon name="happy-outline"></ion-icon>
+          <ion-icon name="attach-outline"></ion-icon>
             <input
               id="msg"
               type="text"
@@ -81,39 +97,48 @@
               required
               autocomplete="off"
             />
-            <button class="btn"><img src="img/send.png" style="width: 45%;"> </button>
+            <ion-icon name="mic-outline" class="icn"></ion-icon>
           </form>
+          <button id="leave-btn" class="leave-button">Leave room</button>
+
         </div>
         
     </div>
       </div>
+      <video autoplay muted preload loop id="video-background">
+        <source src="./img/vd3.mp4" type="video/mp4">
+      </video>
+
       
        
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-    const userImg = document.getElementById('userImg');
-    userImg.addEventListener('click', showProfilePopup);
+    const userData = JSON.parse(localStorage.getItem('userData'));
+    const userNameElement = document.getElementById('userName');
+    const userEmailElement = document.getElementById('userEmail');
 
-    function showProfilePopup() {
-        const userData = JSON.parse(localStorage.getItem('userData'));
-        if (userData) {
-            const profileInfoHTML = `
-                <p><strong>Name:</strong> ${userData.displayName}</p>
-                <p><strong>Email:</strong> ${userData.email}</p>
-                <!-- Add more profile information as needed -->
-            `;
-            const profileInfoContent = document.getElementById('profileInfoContent');
-            profileInfoContent.innerHTML = profileInfoHTML;
-
-            const profileInfoPopup = document.getElementById('profileInfoPopup');
-            profileInfoPopup.style.display = 'block';
-        } else {
-            console.error("User data not found");
-        }
+    if (userData) {
+        userNameElement.textContent = userData.displayName;
+        userEmailElement.textContent = userData.email;
+        document.getElementById("usernameOnline").textContent = userData.displayName;
+    } else {
+        console.error("User data not found");
     }
 });
 
-  </script>
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleIcon = document.getElementById('toggleIcon');
+    const menu = document.querySelector('.iioonn');
+
+
+    toggleIcon.addEventListener('click', function() {
+        menu.classList.toggle('hidden');
+    });
+});
+
+
+
+    </script>
 
     <script
       type="module"
