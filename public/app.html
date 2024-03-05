@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="./css/app.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   </head>
   <body>
      <div class="leftside" style="margin-top: -40%;">
@@ -88,7 +89,7 @@
         </div>
         <div class="chatbox_input" >
           <form id="chat-form">
-            <ion-icon name="happy-outline"></ion-icon>
+            <ion-icon name="happy-outline" id="emoji-button"></ion-icon>
           <ion-icon name="attach-outline"></ion-icon>
             <input
               id="msg"
@@ -109,13 +110,13 @@
         <source src="./img/vd3.mp4" type="video/mp4">
       </video>
 
-      
-       
     <script>
+
       document.addEventListener('DOMContentLoaded', function() {
     const userData = JSON.parse(localStorage.getItem('userData'));
     const userNameElement = document.getElementById('userName');
     const userEmailElement = document.getElementById('userEmail');
+   
 
     if (userData) {
         userNameElement.textContent = userData.displayName;
@@ -139,6 +140,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     </script>
+
+    
 
     <script
       type="module"
