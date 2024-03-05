@@ -76,8 +76,11 @@ io.on('error', error => {
 
 const port = process.env.PORT || 3000;
 
-server.listen(port , ()=> {
-    console.log(`Server running on port ${port}`);
+const hostname1 = '192.168.4.66'
+const hostname2 = 'localhost'
+
+server.listen(port , hostname1,()=> {
+    console.log(`Server running at http://${hostname1}:${port}`);
 });
 
 

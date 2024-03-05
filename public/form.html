@@ -24,9 +24,15 @@
                 </div>
                 <button type="submit" value="Login" class="btn" id="buttonLogin">login</button>
                 <p class="social-text">Or Sign In with google</p>
+                <div class="social-media" id="googleButton">
+                    
+                    <a class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    
+                </div>
                 <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a></p>
             </form>
-            <button  ><img id="glb" src="./img/free-google-1772223-1507807.webp" alt=""></button>
 
             <form action="" class="sign-up-form" id="register">
                 <h2 class="title">Sign up</h2>
@@ -46,24 +52,24 @@
                     <i class="fas fa-lock"></i>
                     <input type="password" placeholder="confirm-Password">
                 </div>
-                <button type="submit" value="Register" id="register" class="btn">Registe</button>
+                <button type="submit" value="Register" id="register" class="btn">Register</button>
                 <p class="social-text">Or Sign Up with google</p>
-                
+                <div class="social-media" id="googleButtonn">
+                    
+                    <a class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    
+                </div>
                 <p class="account-text">Already have an account? <a href="#" id="sign-in-btn2">Sign in</a></p>
             </form>
-            <div class="social-media">
-                    
-                <a class="social-icon">
-                    <i class="fab fa-google"></i>
-                </a>
-                
-            </div>
+            
         </div>
         <div class="panels-container">
             <div class="panel left-panel">
                 <div class="content">
-                    <h3>You have a ready  acount ?</h3>
-                    <p>click down to log your acount</p>
+                    <h3>You have Already an account ?</h3>
+                    <p>click down to log your account</p>
                     <button class="btn" id="sign-in-btn"><span class="span-mother">
                         <span>S</span>
                         <span>i</span>
@@ -175,10 +181,8 @@
      let RegisterEmailInp = document.getElementById("registerEmail");
      let RegisterPassInp = document.getElementById("registerPassword");
      let fname = document.getElementById("fullname");
-     let forgetPassword = document.getElementById("forgetPassword");
-     let googleButton = document.getElementById("googleButtonn");
-
-     let glb = document.getElementById('glb');
+     let googleButton = document.getElementById("googleButton");
+     let googleButtonn = document.getElementById("googleButtonn");
  
      let login = document.getElementById("login");
      let register = document.getElementById("register");
@@ -223,19 +227,36 @@
      }
      register.addEventListener('submit', registerUser);
  
-     let ForgetPassword = ()=>{
-         sendPasswordResetEmail(auth,EmailInp.value)
-         .then(()=>{
-             alert("Check your Email !!");
-         })
-         .catch((error)=>{
-             alert("Problem in sending Email !!");
-         })
-     }
-     forgetPassword.addEventListener('click',ForgetPassword);
+    //  let ForgetPassword = ()=>{
+    //      sendPasswordResetEmail(auth,EmailInp.value)
+    //      .then(()=>{
+    //          alert("Check your Email !!");
+    //      })
+    //      .catch((error)=>{
+    //          alert("Problem in sending Email !!");
+    //      })
+    //  }
+    //  forgetPassword.addEventListener('click',ForgetPassword);
  
  
-     glb.addEventListener("click" , function(){
+     googleButton.addEventListener("click" , function(){
+     signInWithPopup(auth, provider)
+     .then((result) => {
+       const credential = GoogleAuthProvider.credentialFromResult(result);
+       const user = result.user;
+       const userData = {
+       displayName: user.displayName,
+       email: user.email,
+     };
+     localStorage.setItem('userData', JSON.stringify(userData));
+       window.location.href = "chat.html"
+     }).catch((error) => {
+       const errorCode = error.code;
+       const errorMessage = error.message;
+     });
+ 
+   });
+     googleButtonn.addEventListener("click" , function(){
      signInWithPopup(auth, provider)
      .then((result) => {
        const credential = GoogleAuthProvider.credentialFromResult(result);

@@ -598,43 +598,19 @@ margin-right: 5px;
   font-weight: bolder;
 }
 
- .wave {
-    opacity: .6;
-    position: absolute;
-    bottom: 60%;
-    left: 50%;
-    width: 6000px;
-    height: 6000px;
-    background-image: url(portrait-of-woman-holding-a-laptop-D748DGQ.jpg);
-    margin-left: -3000px;
-    transform-origin: 50% 48%;
-    border-radius: 46%;
-    animation: wave 12s infinite linear;
-    pointer-events: none
-}
 
-.wave2 {
-    animation: wave 28s infinite linear;
-    opacity: .3
-}
 
-.wave3 {
-    animation: wave 20s infinite linear;
-    opacity: .1
-}
 
-.wave {
-    background: #0e76c5;
-    z-index: 2;
-} 
-
-@keyframes wave {
-  from {
-      transform: rotate(0deg)
+@media (max-width: 700px) {
+  
+  .ANOTHERside {
+    display: none;
   }
-  to {
-      transform: rotate(360deg)
+  .rightSide h5 , .rightSide .flexb{
+    display: none;
+  }
+
+  .icn{
+    display: none;
   }
 }
-
- 

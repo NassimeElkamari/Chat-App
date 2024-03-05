@@ -58,7 +58,6 @@ form.sign-in-form {
     transition-delay: 1s;
 }
 form.sign-up-form {
-    height: 200px;
     opacity: 0;
     transition: 0.5s ease-in-out;
     transition-delay: 1s;
@@ -254,7 +253,7 @@ a {
     pointer-events: none;
 }
 .content {
-    color: #fff;
+    color: #4c1212;
     transition: 1.1s ease-in-out;
     transition-delay: 0.5s;
 }
