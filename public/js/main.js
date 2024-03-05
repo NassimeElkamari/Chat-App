@@ -84,7 +84,7 @@ function outputUsers(users) {
     users.forEach((user) => {
       const li = document.createElement('div');
       li.innerHTML = `<div class="block">    
-      <img src="./img/user.png" class="cover"/> 
+      <img src="img/userimg.jfif" class="cover"/> 
       <div class="details">
         <div class="listHead">
           <h4>🟢 ${user.username} </h4>

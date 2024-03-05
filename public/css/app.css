@@ -207,6 +207,7 @@ border-radius:50%;
   margin-bottom: 0% ;
 }
 .search-icons li
+
 {
   font-size: 1em;
   margin-left: 10px;
@@ -347,7 +348,8 @@ border-radius:50%;
   width: 96%;
   margin: 15px;
   height: 55px;
-  background:linear-gradient(#4D4C7D,#526D82);
+  background-color:#827397;
+  /* background:linear-gradient(#4D4C7D,#526D82); */
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -409,7 +411,7 @@ margin-right: 5px;
   font-style: normal;
   font-weight: normal;
   color: #faf5ff;
-  background-color: #3b82f6;
+  /* background-color: #3b82f6; */
   padding: 5.5px;
   border-radius: 10px; 
   display: inline-block; 
@@ -431,7 +433,7 @@ margin-right: 5px;
   width: 100%;
   margin: 5px 0;
 
-  color: #f8fafc;
+  color: white;
 }
 .message p
 {
@@ -440,7 +442,7 @@ margin-right: 5px;
   text-align: right;
   max-width: 65%;
   padding: 12px;
-  background: #0464ad;
+  background: #654d86;
   border-radius: 10px;
   font-size: 0.9em;
   
@@ -453,7 +455,7 @@ margin-right: 5px;
   right: -12px;
   width: 20px;
   height: 20px;
-  background:linear-gradient(135deg,#0464ad 0%,#0464ad 50%, transparent 50%,transparent) ;
+  background:linear-gradient(135deg,#745b96 0%,#745b96 50%, transparent 50%,transparent) ;
 }
 .message p span
 {
@@ -590,6 +592,8 @@ margin-right: 5px;
 
 .online{
   margin-top: 10px;
+  margin-left: 30px;
+
   font-weight: bold;
 }
 
