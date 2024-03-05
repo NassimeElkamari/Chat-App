@@ -62,9 +62,9 @@ function outputMessage(message) {
 
     // Add a custom class based on whether the message is from the current user or another user
     if (message.username === username) {
-        div.classList.add('my_message'); // Class for user's own messages
+        div.classList.add('my_message');
     } else {
-        div.classList.add('his_message'); // Class for other users' messages
+        div.classList.add('his_message');
     }
 
     div.innerHTML = `<p class="meta"><span style="display: flex ; justify-content: start ; font-size: smaller ; text-decoration: underline">${message.username} à ${message.time}</span></br>${message.text}</p>

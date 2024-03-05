@@ -23,6 +23,7 @@ const availableRooms = ["Room 1", "Room 2", "Room 3"];
 app.get('/rooms', (req, res) => {
     res.json({ rooms: availableRooms });
 });
+
 // run when client connects
 io.on('connection' , (socket) =>{
     socket.emit('roomList', { rooms: availableRooms });
@@ -83,8 +84,8 @@ const port = process.env.PORT || 3000;
 const hostname1 = '192.168.4.66'
 const hostname2 = 'localhost'
 
-server.listen(port , hostname1,()=> {
-    console.log(`Server running at http://${hostname1}:${port}`);
+server.listen(port , hostname2,()=> {
+    console.log(`Server running at http://${hostname2}:${port}`);
 });
 
 
