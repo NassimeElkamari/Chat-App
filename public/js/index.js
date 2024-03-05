@@ -40,7 +40,7 @@ signButton.forEach((btn) => {
 
 
 
-    const words = ["Connect With Tech Enthusiasts From Around The World And Explore The Latest Advancements In Technology Together."];
+    const words = ["Connect With Tech Enthusiasts From Around The World ."];
     const el = document.querySelector("#typewriter");
     const sleepTime = 70; // Adjust this value as needed
     let currWordIndex = 0;
