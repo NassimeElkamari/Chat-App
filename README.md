@@ -1,1 +1,1 @@
-# chat-project
+** chat project with express js and socket io with Firebase authentication
